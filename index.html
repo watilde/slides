@@ -12,14 +12,13 @@
 (function () {
  'use strict';
   var xhr = new XMLHttpRequest();
-  xhr.responseType = 'json';
+  xhr.responseType = 'text/plain';
   xhr.open('GET', 'archives.json', true);
   xhr.send(null);
   xhr.addEventListener("load",function() {
-    var res = xhr.response,
+    var res =JSON.parse(xhr.response),
       slides = document.getElementById('slides'),
       slide, link;
-
     for (var name in res) {
       link = document.createElement('a');
       link.href = 'dist/' + res[name];
