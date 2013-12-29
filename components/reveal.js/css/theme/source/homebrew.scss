@@ -1,0 +1,46 @@
+/**
+ * Black theme like Homebrew for reveal.js.
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+// Include theme-specific fonts
+@import url(https://fonts.googleapis.com/css?family=Montserrat:700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic);
+
+
+// Override theme settings (see ../template/settings.scss)
+
+// Background of the presentation
+$backgroundColor: #000;
+
+// Primary/body text
+$mainFont: 'Open Sans', sans-serif;
+$mainFontSize: 40px;
+$mainFontColor: #00ff00;
+
+// Headings
+$headingMargin: 0 0 10px 0;
+$headingFont: 'Montserrat', Impact, sans-serif;
+$headingColor: #00ff00;
+$headingTextShadow: none;
+$headingLetterSpacing: -0.03em;
+$headingTextTransform: none;
+
+// Links and actions
+$linkColor: #00ff00;
+$linkColorHover: lighten( $linkColor, 20% );
+
+// Text selection
+$selectionBackgroundColor: #000;
+$selectionColor: #fff;
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
