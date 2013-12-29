@@ -19,5 +19,8 @@
     "grunt": "~0.4.2",
     "grunt-contrib-watch": "~0.5.3",
     "grunt-markdown": "~0.4.0"
+  },
+  "dependencies": {
+    "connect": "~2.12.0"
   }
 }
