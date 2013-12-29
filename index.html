@@ -7,8 +7,30 @@
 </style>
 <body>
 <div id="command">/github/watilde/slides/dist% ls</div>
-<ul id="slides">
-  <li class="slide"><a href="dist/test.html">test</a></li>
-</ul>
+<ul id="slides"></ul>
+<script>
+(function () {
+ 'use strict';
+  var xhr = new XMLHttpRequest();
+  xhr.responseType = 'json';
+  xhr.open('GET', '/archives.json', true);
+  xhr.send(null);
+  xhr.addEventListener("load",function() {
+    var res = xhr.response,
+      slides = document.getElementById('slides'),
+      slide, link;
+
+    for (var name in res) {
+      link = document.createElement('a');
+      link.href = 'dist/' + res[name];
+      link.innerHTML = name;
+      slide = document.createElement('li');
+      slide.className ='slide';
+      slide.appendChild(link);
+      slides.appendChild(slide);
+    }
+  });
+}());
+</script>
 </body>
 </html>
